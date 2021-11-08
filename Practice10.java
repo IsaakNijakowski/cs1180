@@ -4,6 +4,7 @@
  * CS1180-06L
  * 11/8/2021
  */
+
 class Practice10 {
     public static void main(String[] args) {
         //Initialize player objects
@@ -18,7 +19,7 @@ class Practice10 {
         }
         //Print winner
         if (user.getHealth() <= 0 && enemy.getHealth() <= 0) {
-            System.out.println(user.getName() + " and " + enemy.getName() + " have defeated eachother!");
+            System.out.println(user.getName() + " and " + enemy.getName() + " have defeated each other!");
         } else if (user.getHealth() <= 0) {
             System.out.println(enemy.getName() + " has won!");
         } else {
@@ -66,5 +67,4 @@ class Player {
     public void setMaxDamage(int num) {
         maxDamage = num;
     }
-
 }
