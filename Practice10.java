@@ -1,18 +1,29 @@
+/*
+ * Isaak Nijakowski
+ * Practice 10
+ * CS1180-06L
+ * 11/8/2021
+ */
 class Practice10 {
     public static void main(String[] args) {
-        System.out.println("Test");
-        Player user = new Player("user",10,3);
-        Player enemy = new Player("enemy",5,1);
-        System.out.println("Player name: " + user.getName());
-        System.out.println("Player health: " + user.getHealth());
-        System.out.println("Player max damage: " + user.getMaxDamage());
-        System.out.println("Enemy name: " + enemy.getName());
-        System.out.println("Enemy health: " + enemy.getHealth());
-        System.out.println("Enemy max damage: " + enemy.getMaxDamage());
-        System.out.println("The player attacks!");
-        user.hit(enemy);
-        System.out.println("Enemy health: " + enemy.getHealth());
-        System.out.println(user.toString());
+        //Initialize player objects
+        Player user = new Player("Isaak",20,10);
+        Player enemy = new Player("Green Slime",10,20);
+        //Fight till player reaches zero health
+        System.out.println(user.toString() + "  " + enemy.toString());
+        while (user.getHealth() > 0 && enemy.getHealth() > 0) {
+            user.hit(enemy);
+            enemy.hit(user);
+            System.out.println(user.toString() + "  " + enemy.toString());
+        }
+        //Print winner
+        if (user.getHealth() <= 0 && enemy.getHealth() <= 0) {
+            System.out.println(user.getName() + " and " + enemy.getName() + " have defeated eachother!");
+        } else if (user.getHealth() <= 0) {
+            System.out.println(enemy.getName() + " has won!");
+        } else {
+            System.out.println(user.getName() + " has won!");
+        }
 
     }
 }
